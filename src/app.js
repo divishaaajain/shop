@@ -104,7 +104,7 @@ const multer = require('multer');
 // const helmet = require('helmet');
 // const compression = require('compression');
 // const morgan = require('morgan');
-// const https = require('https');
+const https = require('https');
 const dotenv = require('dotenv').config();
 
 const shopRoutes = require('./routes/shop');
@@ -124,8 +124,8 @@ const csrfProtection = csrf();
 
 
 // Reading SSL privateKey and certificate
-// const privateKey = fs.readFileSync('server.key');
-// const certificate = fs.readFileSync('server.cert');
+const privateKey = fs.readFileSync('server.key');
+const certificate = fs.readFileSync('server.cert');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
