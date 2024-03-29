@@ -101,11 +101,11 @@ const multer = require('multer');
 // const https = require('https');
 const dotenv = require('dotenv').config();
 
-const shopRoutes = require('../routes/shop');
-const adminRoutes = require('../routes/admin');
-const authRoutes = require('../routes/auth');
-const errorsController = require('../controllers/errors');
-const User = require('../models/user');
+const shopRoutes = require('./routes/shop');
+const adminRoutes = require('./routes/admin');
+const authRoutes = require('./routes/auth');
+const errorsController = require('./controllers/errors');
+const User = require('./models/user');
 
 const app = express();
 
@@ -139,9 +139,10 @@ const fileFilter = (req, file, cb)=>{
 };
 
 // const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
-
+console.log(path.join(__dirname, 'public', 'views'))
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public', 'views'));
+
 
 // app.use(helmet());                                     // setting secure response headers middleware
 // app.use(compression());                                // adding asset compression middleware - we can also configure it here
