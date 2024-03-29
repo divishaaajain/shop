@@ -115,7 +115,7 @@ const User = require('./models/user');
 
 const app = express();
 
-const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster1.digrd5x.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}`;        
+const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster1.digrd5x.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority&appName=Cluster1`;        
 const store = new MongoDBStore({
     uri: MONGODB_URI,
     collection: 'sessions'
@@ -205,7 +205,7 @@ app.use((error, req, res, next)=>{                          // error-handling mi
     });
 });
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MONGODB_URI)
 .then((connection)=>{
     https.createServer({key: privateKey, cert: certificate}, app).listen(process.env.PORT || 3000);         // manual configuration of SSL
     // app.listen(process.env.PORT || 3000);
