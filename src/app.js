@@ -101,11 +101,11 @@ const multer = require('multer');
 // const https = require('https');
 const dotenv = require('dotenv').config();
 
-const shopRoutes = require('./routes/shop');
-const adminRoutes = require('./routes/admin');
-const authRoutes = require('./routes/auth');
-const errorsController = require('./controllers/errors');
-const User = require('./models/user');
+const shopRoutes = require('../routes/shop');
+const adminRoutes = require('../routes/admin');
+const authRoutes = require('../routes/auth');
+const errorsController = require('../controllers/errors');
+const User = require('../models/user');
 
 const app = express();
 
