@@ -1,5 +1,11 @@
 /* NODE_ENV=production MONGO_USER=divishajain07 MONGO_PASSWORD=AXEFvtUYQVfNRFeq MONGO_DEFAULT_DATABASE=shop STRIPE_KEY=sk_test_51OudMmSA1EwednIRn7SZRkfYj3SM2mPe7h10quX79hOnvCG5s0uo1UaPVhVTLyaXLVGqfoKRiXaaaTdwkbkv1RDc00wbi5FBWQ
 
+"engines": {
+    "node": ">=18.18.0 <19.0.0"
+  },
+
+  ?retryWrites=true&w=majority&appName=Cluster1
+
 
 -----------         DEPLOYMENT PREPARATION          ------------
 
@@ -109,7 +115,7 @@ const User = require('./models/user');
 
 const app = express();
 
-const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster1.digrd5x.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority&appName=Cluster1`;        
+const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster1.digrd5x.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}`;        
 const store = new MongoDBStore({
     uri: MONGODB_URI,
     collection: 'sessions'
