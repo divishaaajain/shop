@@ -42,6 +42,7 @@ isAuth,
 adminController.postEditProduct);
 
 router.post('/delete-product', isAuth, adminController.postDeleteProduct);
+console.log("I want to do meow-meow with Gopal Gaur");
 
 module.exports = router;
 
