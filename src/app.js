@@ -104,7 +104,7 @@ const multer = require('multer');
 // const helmet = require('helmet');
 // const compression = require('compression');
 // const morgan = require('morgan');
-const https = require('https');
+// const https = require('https');
 const dotenv = require('dotenv').config();
 
 const shopRoutes = require('./routes/shop');
@@ -124,8 +124,8 @@ const csrfProtection = csrf();
 
 
 // Reading SSL privateKey and certificate
-const privateKey = fs.readFileSync('server.key');
-const certificate = fs.readFileSync('server.cert');
+// const privateKey = fs.readFileSync('server.key');
+// const certificate = fs.readFileSync('server.cert');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
@@ -207,8 +207,8 @@ app.use((error, req, res, next)=>{                          // error-handling mi
 
 mongoose.connect(MONGODB_URI)
 .then((connection)=>{
-    https.createServer({key: privateKey, cert: certificate}, app).listen(process.env.PORT || 3000);         // manual configuration of SSL
-    // app.listen(process.env.PORT || 3000);
+    // https.createServer({key: privateKey, cert: certificate}, app).listen(process.env.PORT || 3000);         // manual configuration of SSL
+    app.listen(process.env.PORT || 3000);
 })
 .catch((err)=>{
     console.log(err);
