@@ -207,8 +207,8 @@ app.use((error, req, res, next)=>{                          // error-handling mi
 
 mongoose.connect(MONGODB_URI)
 .then((connection)=>{
-    // https.createServer({key: privateKey, cert: certificate}, app).listen(process.env.PORT || 3000);         // manual configuration of SSL
-    app.listen(process.env.PORT || 3000);
+    https.createServer({key: privateKey, cert: certificate}, app).listen(process.env.PORT || 3000);         // manual configuration of SSL
+    // app.listen(process.env.PORT || 3000);
 })
 .catch((err)=>{
     console.log(err);
