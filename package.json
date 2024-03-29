@@ -1,0 +1,43 @@
+{
+  "name": "node.js",
+  "version": "1.0.0",
+  "description": "Complete node.js course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file .env ./app.js",
+    "start:dev": "nodemon app.js"
+  },
+  "author": "Divisha Jain",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^5.0.0",
+    "cookie-parser": "^1.4.6",
+    "csrf-csrf": "^3.0.3",
+    "csurf": "^1.11.0",
+    "ejs": "^3.1.9",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.2.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.9.1",
+    "nodemailer": "^6.9.11",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "nodemon": "^3.0.3",
+    "pdfkit": "^0.14.0",
+    "pug": "^3.0.2",
+    "sequelize": "^6.37.0",
+    "stripe": "^14.21.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  }
+}
