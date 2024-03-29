@@ -205,7 +205,7 @@ app.use((error, req, res, next)=>{                          // error-handling mi
     });
 });
 
-mongoose.connect(MONGODB_URI)
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 .then((connection)=>{
     https.createServer({key: privateKey, cert: certificate}, app).listen(process.env.PORT || 3000);         // manual configuration of SSL
     // app.listen(process.env.PORT || 3000);
