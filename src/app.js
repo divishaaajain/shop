@@ -92,7 +92,7 @@ NOTE:- THIS ALL WILL BE DONE BY THE HOSTING PROVIDER, THEREOFRE WE DON'T HAVE TO
 
 
 const express = require('express');
-const fs = require('fs');
+// const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -105,7 +105,7 @@ const multer = require('multer');
 // const compression = require('compression');
 // const morgan = require('morgan');
 // const https = require('https');
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 
 const shopRoutes = require('./routes/shop');
 const adminRoutes = require('./routes/admin');
@@ -145,7 +145,6 @@ const fileFilter = (req, file, cb)=>{
 };
 
 // const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
-console.log(path.join(__dirname, 'public', 'views'))
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public', 'views'));
 

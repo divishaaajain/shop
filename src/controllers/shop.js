@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* stripe.redirectToCheckout({}) - It will redirect the user to some of stripe's pages where the user then enters the 'payment_method' details. Once the payment is done/confirmed there, the user is redirected back to the website. 
 
 
